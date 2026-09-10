@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Books</h1>
+
+<ul>
+    {% for book in books %}
+        <li>
+            <strong>{{ book.title }}</strong><br>
+            Publication year: {{ book.publication_year }}<br>
+            Publisher: {{ book.publisher.name }}<br>
+            Reviews: {{ book.review_set.count }}
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+
+{% endblock %}
